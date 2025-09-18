@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 15em);
+    grid-template-rows: repeat(2, 15em);
+    gap: 2em;
+}
+
+.carre {
+    width: 200px;
+    height: 200px;
+    background-color: #8dae87;
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+}
+
+.active {
+    background-color: #aa716c;
+    transform: scale(0.9) rotate(360deg);
+    transition: all 2s ease;
+}
