@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 60%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+
+h1 {
+    font-size: 3em;
+    color: #333;
+    text-align: center;
+}
+
+.socials {
+    background-color: #c0c0c0;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.icone {
+    width: 5em;
+}
+
+.icone path {
+    fill: #fff;
+}
+
+.social {
+    width: 200px;
+    height: 200px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#facebook {
+    background-color: #455a99;
+    border: 0.1em solid #455a99;
+}
+
+#twitter {
+    background-color: #4badef;
+    color: #fff;
+    border: 0.1em solid #4badef;
+
+}
+
+#instagram {
+    background-color: #d42f6b;
+    color: #fff;
+    border: 0.1em solid #d42f6b;
+}
+
+h2 {
+    display: none;
+}
+
+.active {
+    border-radius: 5%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
