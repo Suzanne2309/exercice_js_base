@@ -6,6 +6,24 @@ const favoritesContainer = document.getElementById("favorites_container");
 //Création d'une variable qui peut être changé, qui sera le tableau vide pour les favoris
 let favorites = [];
 
+/********************************************************** Local storage **********************************************************/
+//On crée la fonction qui va permettre de harger les favoris depuis le LocalStorage au démarrage de la page (ou après renouvellement)
+function loadFavorites() {
+    // On crée la variable qui va permettre de récupérer la chaîne (string) stockées sous la clé "favorites" dans l'API du navigateur "localstorage"
+    const storedFavorites = localStorage.getItem("favorites");
+    //SI stored favorites est une chaîne ... (Cette condition SI permet de vérifier si storedFavorites est vide ou une chaîne. Si c'est vide, on ne va pas exécuter JSON car il y a rien à encoder)
+    if (storedFavorites) {
+        //ALORS JSON.parse avec encoder storedFavorites dechaîne en tableau pour qu'il puisse être afficher sur la page
+        favorites = JSON.parse(storedFavorites);
+    }
+}
+
+//On crée la fonction qui va permettre de sauvegarder la liste des favoris même au renouvellement
+function saveFavorites() {
+    //Ici setItem va enregistrer une valeur (citation) dans le localstorage sous la clé ("favorites"), mais comme favorites est un tableau, on utilise JSON.stringify(favorites) qui va permettre de transformer le tableau en chaîne (cela permet la bonne récupération des données)
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
 /********************************************************** Fonction qui va faire apparaître les quotes **********************************************************/
 
 //On crée ici la fonction qui affichera toutes les citations
@@ -90,10 +108,19 @@ function toggleFavorite(author) {
         favorites.push(author);
     }
 
-    //On appelle la fonction pour réactualiser les modifications
+    //On fait appelle à la fonction d'enregistrement dans le localstorage
+    saveFavorites();
+    //On appelle à la fonction pour réactualiser les modifications
     showFavorites();
 }
 
-// On affiche tout au chargement
+//Ici on appelle la fonction  loadFavorites pour que les favoris apparaîssent tel quel au chargement/renouvellement de la page
+loadFavorites();
+
+//On appelle les fonctions pour afficher tout au chargement
 showQuotes();
 showFavorites();
+
+
+
+
