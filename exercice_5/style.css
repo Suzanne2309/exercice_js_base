@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+
+#quotes_container,
+#favorites_container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+h1,
+h2 {
+    font-size: 5em;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+}
+
+.quote {
+    border: 1px solid #333;
+    width: 50%;
+    padding: 1em;
+    border-radius: 5%;
+    background: #333;
+}
+
+
+.quote p {
+    font-size: 3em;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+}
+
+.quote small {
+    font-size: 1.5em;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+}
+
+.btn {
+    padding: 0.2em 0.8em;
+    cursor: pointer;
+    width: 5em;
+}
